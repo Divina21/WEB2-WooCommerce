@@ -1,0 +1,8 @@
+<div class="search_input">
+                <a href="javascript:;" class="searchbtn">Search</a>
+                <form role="search" class="searchform" action="https://fioriperte.com/" method="get">
+                  <input class="searchfield" autocomplete="off" value name="s" type="search" placeholder="Enter Search Text" required />
+                  <!-- <input type="hidden" name="post_type" value="product" /> -->
+                  <input class="submitbtn" type="submit" name="submit" value="Go" />
+                </form>
+                </div>
