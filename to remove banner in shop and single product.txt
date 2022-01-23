@@ -1,4 +1,5 @@
 <!-- Banner -->
+
 <div id="banner">
 <div class="wrapper animatedParent animateOnce">
 	<?php if (is_front_page() ) { ?>
