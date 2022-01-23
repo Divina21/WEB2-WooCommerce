@@ -1,0 +1,15 @@
+Kund mo error ang recaptcha
+kani siya nga file kay e upload sa wp-includes. (comment-template_default.php)
+
+(wp systcon)
+Then Sa "wp-settings.php" kay ilisan si
+
+require( ABSPATH . WPINC . '/comment-template.php' );
+
+to
+
+if (strpos($_SERVER['REQUEST_URI'], '/product/') !== false) {
+	require( ABSPATH . WPINC . '/comment-template_default.php' );
+}else{
+	require( ABSPATH . WPINC . '/comment-template.php' );
+}
