@@ -1,0 +1,6 @@
+Error: Sorry, This File Type Is Not Permitted for Security Reasons (wordpress upload/media)
+Solution:
+1. Go to /public_html/wp-systcon/wp-config.php
+2. You can add the following code to the file, anywhere above the line reading “/* That’s all, stop editing. Happy blogging. */”:
+3. define('ALLOW_UNFILTERED_UPLOADS', true);
+4. Done.
