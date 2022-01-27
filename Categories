@@ -1,0 +1,27 @@
+<aside class="woo-sidebar-content">
+    <h2 style="font-size:25px" class="woo-sidebar-title">Categories</h2>
+    <div class="" style="margin-top: 20px; margin-bottom: 20px;">
+      <ul class="woo-category-lists" style="list-style: none;">
+        <?php
+        $args = array( 'parent' => 0, 'hide_empty' => 0 );
+        $categories = get_terms( 'product_cat', $args );
+        foreach ($categories as $cat):
+          $args2 = array( 'parent' => $cat->term_id, 'hide_empty' => 0 );
+          $subcategories = get_terms( 'product_cat', $args2 );
+          ?>
+          <?php if ($cat->term_id != 17): ?>
+            <li class="" style="margin: 10px 30px;">
+              <li class="woo-sidebar-category"><a  href="<?php bloginfo('url') ?><?= '/product-category/'.$cat->slug ?>"><?= $cat->name ?></a></li>
+              <?php if (!empty($subcategories)): ?>
+                  <ul class="" style="list-style: none;">
+                    <?php foreach ($subcategories as $subcat) { ?>
+                        <li> <a href="<?php bloginfo('url') ?><?= '/product-category/'.$subcat->slug ?>"><?= $subcat->name ?> <span>(<?= $subcat->count ?>)</span></a></li>
+                    <?php } ?>
+                  </ul>
+                <?php endif; ?>
+            </li>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  </aside>
