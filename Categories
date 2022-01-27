@@ -25,3 +25,28 @@
       </ul>
     </div>
   </aside>
+
+=============================================================
+
+// To Show the Products inside a Category //
+
+               <tbody>
+
+                <?php
+                $args = array(
+                    'product_cat' => 'from-the-cafe',
+                );
+                $loop = new WP_Query($args);
+                while ($loop->have_posts()) : $loop->the_post();
+                    global $product; ?>           
+                <tr>
+                    <td><?php the_title(); ?></td>
+                    <td><?php echo $product->get_price_html(); ?></td>
+                    <td><a href="<?php echo site_url().'/restaurant-shop/brunch-2'.'/?add-to-cart='.get_the_ID(); ?>">Order Now »</a></td>
+                </tr>                          
+                <?php endwhile; ?>
+                <?php wp_reset_query(); ?>
+
+                </tbody> 
+                
+ =============================================================
