@@ -1,0 +1,18 @@
+Cannot Receive Email (WooCommerce)
+
+2 Plugins
+- Easy WP SMTP - WP Mail SMTP
+
+Steps to Configure Easy WP SMTP
+1. Install plugin > Activate > Marketing
+2. In Easy WP SMTP click 'Settings'.
+3. Go to PRTool > SMTP Databank > Choose second option.
+4. From Email Address: noreply@proweaversmtp.com
+5. From Name: (Account Name).
+6. SMTP Host: smtp.sparkpostmail.com
+7. SMTP Port: 587
+8. Authentication: Yes.
+9. Username: (Copy from PRTool).
+10. Password: (Copy from PRTool).
+11. Save Changes.
+12. Test Email Functionality.
