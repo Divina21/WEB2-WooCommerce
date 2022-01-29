@@ -1,0 +1,17 @@
+SHIPPING INTEGRATION
+
+Shipping Gateways:
+
+1. USPS - Distance.
+2. FedEx - Requires weight and dimensions.
+3. UPS- Requires weight and dimensions.
+
+Note: Shipping gateways will not work if requirements is not set.
+
+Steps in Shipping Integration.
+1. Upload and Activate Plugin.
+2. Go to WooCommerce > Settings > Shipping
+3. Click 'USPS Basic' > Enable.
+4. Input Credentials provided by the Client.
+5. Check Services.
+6. Click save changes.
