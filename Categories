@@ -52,3 +52,47 @@
                 </tbody> 
                 
  =============================================================
+
+  <div class="productsInner">
+ <?php
+                $categories = get_terms('product_cat', array('hide_empty' => 0, 'orderby' => 'ASC'));
+                $count = 0;
+                foreach($categories as $category) { ?>
+                  <?php if ($category->term_id != 38 && $category->term_id != 32 &&
+                  $category->term_id != 57 && $category->term_id != 34 &&
+                  $category->term_id != 28 && $category->term_id != 29 &&
+                  $category->term_id != 31 && $category->term_id != 55 &&
+                  $category->term_id != 36 && $category->term_id != 45 && 
+                  $category->term_id != 37 && $category->term_id != 60 && 
+                  $category->term_id != 61 && $category->term_id != 59 && 
+                  $category->term_id != 40 && $category->term_id != 26 && 
+                  $category->term_id != 50 && $category->term_id != 39 && 
+                  $category->term_id != 52 && $category->term_id != 46 && 
+                  $category->term_id != 47 && $category->term_id != 65 &&
+                  $category->term_id != 64 && $category->term_id != 18 &&
+                  $category->term_id != 66 && $category->term_id != 35) { ?>
+
+                    <?php $count++; ?>
+                    <section data-aos="flip-right" data-aos-delay="350">
+                    <?php $thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true ); ?>
+                  <?php if ($thumbnail_id) { ?>
+                        <?php // get the image URL
+                        $image = wp_get_attachment_url( $thumbnail_id );  ?>
+                        <figure><img src="<?= $image  ?>" alt="<?php echo $category->name ?>"></figure>
+                    <?php }else{ ?>
+                        <figure><img src="<?php echo  site_url('wp-content/plugins/woocommerce/assets/images/placeholder.png')?>" alt="<?php echo $category->name ?>"></figure>
+                    <?php } ?>
+<!-- start -->
+<?php if (wpq_get_min_price_per_product_cat( $category->term_id ) == wpq_get_max_price_per_product_cat( $category->term_id )) { ?>
+    <span><?php echo '$' . wpq_get_min_price_per_product_cat( $category->term_id ); ?> </span>
+    <?php } ?>
+<!-- end -->
+
+                      
+            <?php if (wpq_get_min_price_per_product_cat( $category->term_id ) != "" && wpq_get_min_price_per_product_cat( $category->term_id ) != wpq_get_max_price_per_product_cat( $category->term_id )) { ?>
+                <span><?php echo '$' . wpq_get_min_price_per_product_cat( $category->term_id ); ?> - <?php echo '$' . wpq_get_max_price_per_product_cat( $category->term_id ); ?></span>
+            <?php } ?>
+                          <h4><a href="<?php echo site_url('product-category/').$category->slug ;?>"><?php echo $category->name; ?></a><span><?php echo category_description( $category->term_id );?></span></h4>
+                    </section>
+                <?php } ?>
+              <?php } ?>
