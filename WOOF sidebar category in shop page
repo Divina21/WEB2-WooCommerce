@@ -1,0 +1,96 @@
+Step 1: Upload plugin https://tl.wordpress.org/plugins/woocommerce-products-filter/
+Step 2: Activate then enable category in plugin settings.
+Step 3. Add this function to functions.php (themename/functions.php)
+
+// ibutang ang kani nga function below ani nga statement
+/**
+ * Registers a widget area.
+ *
+ * @link https://developer.wordpress.org/reference/functions/register_sidebar/
+ *
+ * @since Twenty Sixteen 1.0
+ */
+ // ang function para ni siya mag create ug area sa widget sa Worpress
+ 
+ register_sidebar( array(
+		'id' => 'left-sidebar',
+		'name' => 'Left Sidebar'
+) );
+
+Step 4: Go to Apperance > Widget
+- e drag ang "WOOF - Woocommerce products filter" sa "Left Sidebar" nga area.
+- Pwede nimo e rename ang sulod nga "Title".
+
+Step 5: Add this code to woocommerce.php
+// para ni siya makita ang list sa category through shortcode
+<div class="cat_woof">
+	<?php dynamic_sidebar( 'left-sidebar' );?>
+</div>
+
+Step 6: Need to style ang Shop page (Please refer code below para sa class nga gi use then copy the style to my-style.css).
+
+// my-style.css
+
+.cat_woof {
+    width: 25%;
+    display: inline-block;
+    list-style: none !important;
+}
+.with-sidebar {
+    width: 74%;
+    float: right;
+    border-left: 1px solid #3c527e !important;
+    padding: 20px;
+}
+h2.widgettitle {
+    font-weight: bold;
+    text-transform: uppercase;
+    background: #0036b9;
+    width: 100%;
+    max-width: 313px;
+    padding: 20px;
+    color: white;
+    max-width: none;
+}
+.woof.woof_sid.woof_sid_widget {
+    border: 1px #a3a3a3 solid;
+    width: 100%;
+    max-width: 313px;
+    border-top: none;
+    max-width: none;
+}
+
+==================
+
+//Woocommerce.php
+<!-- Main -->
+<div id="main_area">
+	<div class="wrapper woocommerce">
+		<div class="main_con">
+			<?php if(!is_front_page()) { ?>
+			     <?php if ( function_exists('yoast_breadcrumb') ) {
+			          yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+			     } ?>
+			<?php }?>
+      
+<div class="cat_woof">
+	<?php dynamic_sidebar( 'left-sidebar' );?>
+</div>
+
+<main class="with-sidebar">
+				<?php woocommerce_content(); ?>
+</main>
+
+			<div class="main_top"></div>
+			<div class="main_btm"></div>
+
+		</div>
+
+	<div class="clearfix"></div>
+	</div>
+</div>
+<!-- End Main -->
+
+Step 7: Done 
+
+============================================================================================================
