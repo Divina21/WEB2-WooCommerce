@@ -29,7 +29,7 @@ Step 5: Add this code to woocommerce.php
 </div>
 
 Step 6: Need to style ang Shop page (Please refer code below para sa class nga gi use then copy the style to my-style.css).
-
+Path: /public_html/wp-content/plugins/functions-for-woo/css
 // my-style.css
 
 .cat_woof {
@@ -74,22 +74,50 @@ h2.widgettitle {
 			     } ?>
 			<?php }?>
       
-<div class="cat_woof">
-	<?php dynamic_sidebar( 'left-sidebar' );?>
-</div>
+		<div class="cat_woof">
+			<?php dynamic_sidebar( 'left-sidebar' );?>
+		</div>
 
-<main class="with-sidebar">
-				<?php woocommerce_content(); ?>
-</main>
+		<main class="with-sidebar">
+			<?php woocommerce_content(); ?>
+		</main>
 
-			<div class="main_top"></div>
-			<div class="main_btm"></div>
+		<div class="main_top"></div>
+		<div class="main_btm"></div>
 
 		</div>
 
 	<div class="clearfix"></div>
 	</div>
 </div>
+
+// Or //
+
+<!-- Main -->
+<div id="main_area">
+  <div class="wrapper woocommerce">
+    <div class="main_holder animatedParent animateOnce">
+
+        <?php if(!is_front_page()) { ?>
+          <?php if ( function_exists('yoast_breadcrumb') ) {
+          yoast_breadcrumb( '<p id="breadcrumbs">','</p>' ); } ?>
+        <?php }?>
+
+        <div class="cat_woof">
+        	<?php dynamic_sidebar( 'left-sidebar' );?>
+        </div>
+        
+        <main class="with-sidebar">
+  				<?php woocommerce_content(); ?>
+        </main>
+
+
+    </div>
+      <?php if ( is_front_page() ) { get_includes('sidebar'); } ?>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<!-- End Main -->
 <!-- End Main -->
 
 Step 7: Done 
