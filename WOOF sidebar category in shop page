@@ -1,6 +1,7 @@
 Step 1: Upload plugin https://tl.wordpress.org/plugins/woocommerce-products-filter/
 Step 2: Activate then enable category in plugin settings.
-Step 3. Add this function to functions.php (themename/functions.php)
+Step 3. Click plugin settings, then check "Product categories".
+Step 4. Add this function to functions.php (themename/functions.php)
 
 // ibutang ang kani nga function below ani nga statement
 /**
