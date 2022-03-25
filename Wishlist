@@ -1,0 +1,2 @@
+For featured product link:
+<li><a href="<?php echo site_url().'/?add_to_wishlist='.get_the_ID().'#featured-section' ?>" class="add_to_wishlist single_add_to_wishlist mid_like" data-product-id="<?php echo get_the_ID(); ?>"></a></li>
