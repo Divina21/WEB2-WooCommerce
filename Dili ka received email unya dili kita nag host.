@@ -1,0 +1,84 @@
+1. try to use atong amazon nato nga SMTP
+2. please pud try ug update2 ang from
+3. try pud use atong force email notifications ibutang sa functions for woo
+=======================================
+/********** For PayPal E-mail Notifications Based on Order Status ******************/
+
+//Pending to Processing
+add_action('woocommerce_order_status_pending_to_processing', 'processing_send_an_email_notification', 10, 2 );
+function processing_send_an_email_notification( $order_id, $order ){
+    // Getting all WC_emails objects
+    $email_notifications = WC()->mailer()->get_emails();
+
+    // Sending the email
+    $email_notifications['WC_Email_Customer_Processing_Order']->trigger( $order_id );
+}
+
+//Pending to Completed
+add_action('woocommerce_order_status_pending_to_completed', 'completed_send_an_email_notification', 10, 2 );
+function completed_send_an_email_notification( $order_id, $order ){
+    // Getting all WC_emails objects
+    $email_notifications = WC()->mailer()->get_emails();
+
+    // Sending the email
+    $email_notifications['WC_Email_Customer_Completed_Order']->trigger( $order_id );
+}
+
+//Pending to On Hold
+add_action('woocommerce_order_status_pending_to_on-hold', 'onhold_send_an_email_notification', 10, 2 );
+function onhold_send_an_email_notification( $order_id, $order ){
+    // Getting all WC_emails objects
+    $email_notifications = WC()->mailer()->get_emails();
+
+    // Sending the email
+    $email_notifications['WC_Email_Customer_On_Hold_Order']->trigger( $order_id );
+}
+
+//On Hold to Failed
+add_action('woocommerce_order_status_on-hold_to_failed', 'failed_send_an_email_notification', 10, 2 );
+function failed_send_an_email_notification( $order_id, $order ){
+    // Getting all WC_emails objects
+    $email_notifications = WC()->mailer()->get_emails();
+
+    // Sending the email
+    $email_notifications['WC_Email_Failed_Order']->trigger( $order_id );
+}
+
+//On Hold to Cancelled
+add_action('woocommerce_order_status_on-hold_to_cancelled', 'cancelled_send_an_email_notification', 10, 2 );
+function cancelled_send_an_email_notification( $order_id, $order ){
+    // Getting all WC_emails objects
+    $email_notifications = WC()->mailer()->get_emails();
+
+    // Sending the email
+    $email_notifications['WC_Email_Cancelled_Order']->trigger( $order_id );
+}
+
+add_action('woocommerce_order_status_on-hold_to_processing', 'new_order_send_an_email_notification', 10, 2 );
+function new_order_send_an_email_notification( $order_id, $order ){
+    // Getting all WC_emails objects
+    $email_notifications = WC()->mailer()->get_emails();
+
+    // Sending the email
+    $email_notifications['WC_Email_New_Order']->trigger( $order_id );
+}
+
+add_action('woocommerce_order_status_pending_to_processing', 'new_order_send_an_email_notification2', 10, 2 );
+function new_order_send_an_email_notification2( $order_id, $order ){
+    // Getting all WC_emails objects
+    $email_notifications = WC()->mailer()->get_emails();
+
+    // Sending the email
+    $email_notifications['WC_Email_New_Order']->trigger( $order_id );
+}
+ 
+add_action('woocommerce_order_status_pending', 'new_order_send_an_email_notification3', 10, 2 );
+function new_order_send_an_email_notification3( $order_id, $order ){
+    // Getting all WC_emails objects
+    $email_notifications = WC()->mailer()->get_emails();
+
+    // Sending the email
+    $email_notifications['WC_Email_New_Order']->trigger( $order_id );
+}
+
+===================================================================
