@@ -1,0 +1,66 @@
+    task link: https://office.orchestra.tools/tasks/viewtask/1206210
+    site link: https://w2737.proweaver2.site/product-category/men/african
+    ===================
+    <div class="non_ban">
+    <div class="non_ban_img">
+    <?php if(is_home() && is_author() && is_category() && is_tag() && is_single()) { ?>
+      <?php if (has_post_thumbnail() ) {?>
+          <?php the_post_thumbnail('full');?>
+      <?php }else{ ?>
+          <figure><img src="<?php bloginfo('template_url');?>/images/slider/nh-banner.jpg" alt="hats, glasses and footwears" /></figure>
+      <?php } ?>
+
+<!-- start -->
+     <!-- </?php } elseif ( has_term( 22, 'product_cat' ) ) { ?>
+            <img src="</?php bloginfo('template_url'); ?>/images/slider/Men.jpg" alt="men" /> -->
+
+      <?php } elseif ( is_product_category( 'men' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Men.jpg" alt="african men" />
+
+      <?php } elseif ( is_product_category( 'african' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/African.jpg" alt="african men" />
+
+      <?php } elseif ( is_product_category( 'african-women' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/African Women.jpg" alt="african men" />
+
+      <?php } elseif ( is_product_category( 'english-women' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/English Women.jpg" alt="african men" />
+
+      <?php } elseif ( is_product_category( 'lingerie1' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/LINGERIE.jpg" alt="african men" />
+
+      <?php } elseif ( is_product_category( 'bra' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Bra.jpg" alt="african men" />
+
+      <?php } elseif ( is_product_category( 'shoes' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Shoes.jpg" alt="african men" />
+
+      <?php } elseif ( is_product_category( 'bottoms' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Bottoms.jpg" alt="african men" />
+
+      <?php } elseif ( is_product_category( 'bottoms' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Bottoms.jpg" alt="african men" />
+
+      <?php } elseif ( is_product_category( 'women-tops' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Women Tops.jpg" alt="african men" />
+
+      <?php } elseif ( is_product_category( 'men-tops' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Men Tops.jpg" alt="african men" />
+
+      <?php } elseif ( is_page( 'fashion-boutique-dresses' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Dresses.jpg" alt="african men" />
+
+      <?php } elseif ( is_page( 'fashion-boutique-clearance' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Clearance.jpg" alt="african men" />
+
+      <?php } elseif ( is_page( 'fashion-boutique-bottoms' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Bottoms.jpg" alt="african men" />
+
+      <?php } elseif ( is_page( 'fashion-boutique-shoes' ) ) { ?>
+            <img src="<?php bloginfo('template_url'); ?>/images/slider/Shoes.jpg" alt="african men" />
+<!-- end -->
+
+      <?php } else { ?>
+        <img src="<?php bloginfo('template_url'); ?>/images/slider/nh-banner.jpg" alt="hats, glasses and footwears" />
+      <?php } ?>
+    </div>
