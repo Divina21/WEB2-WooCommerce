@@ -1,0 +1,25 @@
+1. Upload Advanced Woo Search Plugin: https://tl.wordpress.org/plugins/advanced-woo-search/
+2. Activate Plugin then click 'Reindex Table'.
+3. Copy the shortcode.
+4. Go to header then look for the form of search bar.
+Static Form:
+<form class="form" action="#" method="post">
+   <input class="head_input" type="text" name="Search" placeholder="search" required />
+   <input type="submit" name="submit_info" value="Submit" />
+</form>
+
+Dynamic Form
+<div class="form">
+   <?php echo do_shortcode('[aws_search_form]'); ?>
+</div>
+
+Note: e copy ra nimo kung unsa ang class sa form.
+
+5. Then inspect and copy kung unsa ang style sa class sa input static, then e change ang kani na class sa common.css sa file:
+.aws-container .aws-search-field {
+
+}
+Note: Use Path:
+https://w3735.proweaversite3.com/wp-content/plugins/advanced-woo-search/assets/css/common.css?ver=2.53
+
+6. Done.
