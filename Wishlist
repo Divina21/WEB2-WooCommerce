@@ -1,2 +1,11 @@
 For featured product link:
 <li><a href="<?php echo site_url().'/?add_to_wishlist='.get_the_ID().'#featured-section' ?>" class="add_to_wishlist single_add_to_wishlist mid_like" data-product-id="<?php echo get_the_ID(); ?>"></a></li>
+
+Note: Gamita gihapon ang class ani niya except sa mid_like, e change ni to unsa man na class ang naa sa static.
+
+Steps para sa wishlist.
+1. Download plugin: https://wordpress.org/plugins/yith-woocommerce-wishlist/
+2. Activate plugin sa wordpress admin.
+3. After activating kay automatic na cya ma add-an ug page sa pages. Gamita to nga link mao toy ibutang sa href code sa header. Then e display:none lang to ang naa sa wishlist na dili na need.
+4. Done.
+5. Reference link: https://w3735.proweaversite3.com/
