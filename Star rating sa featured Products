@@ -1,0 +1,47 @@
+1. Mao ang ang sample sa static:
+<div class="star">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+</div>
+2. Gi change nako to:
+<div class="ratings woocommerce">
+   		<?php $average = $product->get_average_rating(); ?>
+    	 <?php
+   				if($average == 0){
+   				 $starContent = '';
+   				}else{
+   				$starContent = '~';
+   				}
+   				?>
+ <?php echo '<a href="'.get_permalink($id).'#tab-reviews"><div class="star-rating" title="'.sprintf(__( 'Rated %s out of 5', 'woocommerce' ), $average).'"><span style="width:'.( ( $average / 5 ) * 100 ) . '%"><strong itemprop="ratingValue" class="rating"></strong>'.$starContent.'</span></div></a>'; ?>
+</div>
+
+3. Then sa my-style.css, nag add kog css style:
+#bottom1 .woocommerce .star-rating span::before {
+	color: #fea036 !important;
+}
+
+#bottom1 .ratings.woocommerce {
+	justify-content: center;
+	display: flex;
+	line-height: 100%;
+	margin: 0px 0px 3px !important;
+	padding: 0px 0px 5px 0px !important;
+}
+
+#bottom1 .ratings.woocommerce a {
+	background: none;
+	width: 100px;
+}
+
+4. After ani kay nag testing nako sa star rating kung working raba. Go to product page then enter your comment then name and email address, kung successful na siya kay need pa
+cya ug approval sa admin. Go to admin dashboard > Comments, then click 'approved'. Makita na dayon nimo ngadto na nalahi na ang color sa star. Mag Fix nalang kag ginagmay.
+
+5. Done.
+For Referral:
+See Link: https://w3735.proweaversite3.com/
+Orch Link: https://office.orchestra.tools/tasks
+Git: git@54.255.101.170:gofamilypharmacyum119.git
