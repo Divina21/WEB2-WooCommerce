@@ -1,0 +1,13 @@
+1. If GoDaddy ang hosting:
+since godaddy mani nga hosting pls ko try ani nga settings:
+
+Port: 25
+SMTP Authentication: False or none
+SSL or Secure Connection: None
+Server or Host: relay-hosting.secureserver.net
+
+> sa host pwede ra sad kani e use p3plmcpnl480566.prod.phx3.secureserver.net 
+
+> see task link: 
+1. https://office.orchestra.tools/tasks/viewtask/1031568
+2. https://office.orchestra.tools/tasks/viewtask/1030425
