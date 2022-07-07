@@ -1,0 +1,17 @@
+1. Go to functions-for-woo plugin > functions-for-woo.php
+2. Then look for this function, unya copyha ang na change ani.
+============
+add_action('init', 'register_script');
+function register_script() {
+   $ver = rand();
+     wp_register_script( 'my_jquery', plugins_url('/js/my-jquery.js', __FILE__), array('jquery'), '2.5.1', true );
+   //   wp_register_script( 'minjquery', plugins_url('/js/jquery.min', __FILE__),true);
+   //   wp_register_script( 'my_jquery', plugins_url('/js/my-jquery.js', __FILE__), array('minjquery'), true);
+     wp_register_style( 'my_style', plugins_url("/css/my-style.css?v'".$ver."'", __FILE__), false, '1.0.0', 'all');
+     wp_register_style( 'my_quick_view', plugins_url('/css/my_quick_view.css', __FILE__), false, '1.0.0', 'all');
+     wp_register_style( 'my_media', plugins_url('/css/my-media.css', __FILE__), false, '1.0.0', 'all');
+     wp_register_style( 'my_media', plugins_url('/css/my-media.css', __FILE__), false, '1.0.0', 'all');
+}
+============
+3. Added  $ver = rand(); and "/css/my-style.css?v'".$ver."'", __FILE__)
+4. Done.
